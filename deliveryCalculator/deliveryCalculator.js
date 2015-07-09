@@ -40,7 +40,8 @@ function init() {
         calculator.setStartPoint(point);
     })
         .add('load', function (event) {
-            // The "skip" field indicates that this is not data uploading. The "getRusultsCount" field shows that there is at least 1 result.
+            // The "skip" field indicates that this is not data uploading. The "getRusultsCount"
+            // field shows that there is at least 1 result.
             if (!event.get('skip') && searchStartPoint.getResultsCount()) {
                 searchStartPoint.showResult(0);
             }
@@ -54,7 +55,8 @@ function init() {
         calculator.setFinishPoint(point);
     })
         .add('load', function (event) {
-            // The "skip" field indicates that this is not data uploading. The "getRusultsCount" field shows that there is at least 1 result.
+            // The "skip" field indicates that this is not data uploading. The "getRusultsCount"
+            // field shows that there is at least 1 result.
             if (!event.get('skip') && searchFinishPoint.getResultsCount()) {
                 searchFinishPoint.showResult(0);
             }

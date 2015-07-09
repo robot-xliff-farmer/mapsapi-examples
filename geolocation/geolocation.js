@@ -9,7 +9,8 @@ function init() {
             searchControlProvider: 'yandex#search'
         });
 
-    // Comparing the position calculated from the user's IP address and the position detected using the browser.
+    // Comparing the position calculated from the user's IP address and the position detected using
+    // the browser.
     geolocation.get({
         provider: 'yandex',
         mapStateAutoApply: true
@@ -26,7 +27,8 @@ function init() {
         provider: 'browser',
         mapStateAutoApply: true
     }).then(function (result) {
-        // We'll mark the position obtained through the browser in blue. If the browser does not support this functionality, the placemark will not be added to the map.
+        // We'll mark the position obtained through the browser in blue. If the browser does not
+        // support this functionality, the placemark will not be added to the map.
         result.geoObjects.options.set('preset', 'islands#blueCircleIcon');
         myMap.geoObjects.add(result.geoObjects);
     });

@@ -99,7 +99,8 @@ ymaps.modules.define('MultiRouteCustomView', [
                 "Время в пути: " + route.properties.get("duration").text;
         },
 
-        // Method that constructs a list of text descriptions for all the segments of a route on public transport.
+        // Method that constructs a list of text descriptions for all the segments of a route on
+        // public transport.
         createMasstransitRouteOutput: function (route) {
             var result = [];
             for (var i = 0, l = route.getPaths().length; i < l; i++) {

@@ -1,14 +1,19 @@
 // Creating our first custom module - a custom control layout.
 ymaps.modules.define('plugin.PlacemarkCounterControlLayout', [
-    // The list of module dependencies. These modules will be loaded (if they have not yet been loaded) before calling the function that defines the module.
+    // The list of module dependencies. These modules will be loaded (if they have not yet been
+    // loaded) before calling the function that defines the module.
     'templateLayoutFactory'
 ], function (provide, templateLayoutFactory) {
-    // The function that defines the module itself. The first argument is the provide function. The provide function must be passed directly to the module. The provide function call may be delayed. For example, in order to load some data. Subsequent arguments are requested in the module dependencies.     provide(
+    // The function that defines the module itself. The first argument is the provide function. The
+    // provide function must be passed directly to the module. The provide function call may be
+    // delayed. For example, in order to load some data. Subsequent arguments are requested in the
+    // module dependencies.     provide(
         templateLayoutFactory.createClass('<div class=placemark_counter>{{ data.placemark_count }}</div>')
     );
 });
 
-// Creating a second custom module. This module provides its own control, which is based on the buttons.
+// Creating a second custom module. This module provides its own control, which is based on the
+// buttons.
 ymaps.modules.define('plugin.PlacemarkCounterControl', [
     'control.Button',
     'util.extend',
@@ -66,7 +71,8 @@ ymaps.ready(function () {
                 new PlacemarkCounterControl()
             );
         });
-    // Creating a button that we use for adding placemarks to the map.     var addPlacemarkButton = new ymaps.control.Button({
+    // Creating a button that we use for adding placemarks to the map.     var addPlacemarkButton =
+    // new ymaps.control.Button({
             data: { content: 'Добавить метку' },
             options: { maxWidth: 200, float: 'right', selectOnClick: false }
         });

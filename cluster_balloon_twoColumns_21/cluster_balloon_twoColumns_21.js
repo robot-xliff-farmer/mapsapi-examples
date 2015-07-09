@@ -17,13 +17,15 @@ ymaps.ready(function () {
     var clusterer = new ymaps.Clusterer({
         clusterDisableClickZoom: true,
         clusterOpenBalloonOnClick: true,
-        // Setting the mode for opening the balloon. In this example, the balloon will never open in the panel mode.
+        // Setting the mode for opening the balloon. In this example, the balloon will never open
+        // in the panel mode.
         clusterBalloonPanelMaxMapArea: 0,
         // Setting the size of the balloon content layout (in pixels).
         clusterBalloonContentLayoutWidth: 350,
         // Setting a custom layout.
         clusterBalloonItemContentLayout: customItemContentLayout,
-        // Setting the width of the left column, which contains a list of all geo objects in the cluster.
+        // Setting the width of the left column, which contains a list of all geo objects in the
+        // cluster.
         clusterBalloonLeftColumnWidth: 120
     });
     

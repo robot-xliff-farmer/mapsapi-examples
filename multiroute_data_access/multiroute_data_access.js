@@ -27,7 +27,8 @@ function init () {
     ymaps.modules.require([
         'MultiRouteCustomView'
     ], function (MultiRouteCustomView) {
-        // Creating an instance of a textual display of the multiroute model. See the custom_view.js file.
+        // Creating an instance of a textual display of the multiroute model. See the
+        // custom_view.js file.
         new MultiRouteCustomView(multiRouteModel);
     });
 

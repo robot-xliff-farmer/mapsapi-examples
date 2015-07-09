@@ -23,7 +23,8 @@ function init() {
     }, {
         // Setting the circle options. Enabling drag-n-drop for the circle.
         draggable: true,
-        // Fill color. The last byte (77) defines transparency. The transparency of the fill can also be set using the option "fillOpacity".
+        // Fill color. The last byte (77) defines transparency. The transparency of the fill can
+        // also be set using the option "fillOpacity".
         fillColor: "#DB709377",
         // Stroke color.
         strokeColor: "#990066",

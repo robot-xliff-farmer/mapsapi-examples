@@ -28,7 +28,8 @@ function observeEvents (map) {
                 var placemark = e1.get('target');
                 // Calling a function in two cases:
                 mapEventsGroup = map.events.group()
-                    // 1) in the beginning of the movement (if the balloon is in an external container);
+                    // 1) in the beginning of the movement (if the balloon is in an external
+                    // container);
                     .add('actiontick', function (e2) {
                         if (placemark.options.get('balloonPane') == 'outerBalloon') {
                             setBalloonPane(map, placemark, e2.get('tick'));
@@ -71,7 +72,8 @@ function setBalloonPane (map, placemark, mapData) {
         ]),
         isInOutersPane = placemark.options.get('balloonPane') == 'outerBalloon';
 
-    // If the anchor does not fall within the visible area of the map, we move the balloon into the inner container
+    // If the anchor does not fall within the visible area of the map, we move the balloon into the
+    // inner container
     if (!pointInBounds && isInOutersPane) {
         placemark.options.set({
             balloonPane: 'balloon',

@@ -27,7 +27,8 @@ function setCenter () {
 }
 
 function setBounds () {
-    // Bounds - the boundaries of the map viewport. Set as the geographical coordinates of the South-Easternmost and North-Westernmost points of the viewport.
+    // Bounds - the boundaries of the map viewport. Set as the geographical coordinates of the
+    // South-Easternmost and North-Westernmost points of the viewport.
     myMap.setBounds([[37, 38], [39, 40]]);
 }
 

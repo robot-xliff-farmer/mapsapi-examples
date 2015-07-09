@@ -5,7 +5,8 @@ ymaps.ready(function () {
         }, {
             searchControlProvider: 'yandex#search'
         });
-    // Custom modules are not appended to the ymaps namespace. So we can access them asynchronously through the ymaps.modules.require method.
+    // Custom modules are not appended to the ymaps namespace. So we can access them asynchronously
+    // through the ymaps.modules.require method.
     ymaps.modules.require(['geoObject.Arrow'], function (Arrow) {
         var arrow = new Arrow([[57.733835, 38.788227], [55.833835, 35.688227]], null, {
             geodesic: true,
@@ -19,8 +20,10 @@ ymaps.ready(function () {
 
 /*
  * Класс, позволяющий создавать стрелку на карте.
- * Является хелпером к созданию полилинии, у которой задан специальный оверлей.
- * При использовании модулей в реальном проекте рекомендуем размещать их в отдельных файлах.
+ * Является хелпером к созданию полилинии, у которой
+ * задан специальный оверлей.
+ * При использовании модулей в реальном проекте
+ * рекомендуем размещать их в отдельных файлах.
  */
 ymaps.modules.define("geoObject.Arrow", [
     'Polyline',
@@ -34,7 +37,6 @@ ymaps.modules.define("geoObject.Arrow", [
      * @param  {Number} [options.arrowAngle=20] Angle in degrees between the main line and the lines of the arrow.
      * @param  {Number} [options.arrowMinLength=3] Minimum length of the arrow. If the length of the arrow is less than the minimum value, the arrow is not drawn.
      * @param  {Number} [options.arrowMaxLength=20] Maximum length of the arrow.
-     * 
      */
     var Arrow = function (geometry, properties, options) {
         return new Polyline(geometry, properties, extend({}, options, {
@@ -46,7 +48,8 @@ ymaps.modules.define("geoObject.Arrow", [
 
 /*
  * Класс, реализующий интерфейс IOverlay.
- * Получает на вход пиксельную геометрию линии и добавляет стрелку на конце линии.
+ * Получает на вход пиксельную геометрию линии и
+ * добавляет стрелку на конце линии.
  */
 ymaps.modules.define("overlay.Arrow", [
     'overlay.Polygon',
@@ -156,10 +159,13 @@ ymaps.modules.define("overlay.Arrow", [
         },
 
         _onAddToMap: function () {
-            // As a trick to get self-intersections drawn correctly in a transparent polyline, we draw a polygon instead of a polyline. Each contour of the polygon will be responsible for a section of the line.
+            // As a trick to get self-intersections drawn correctly in a transparent polyline, we
+            // draw a polygon instead of a polyline. Each contour of the polygon will be
+            // responsible for a section of the line.
             this._overlay = new PolygonOverlay(new PolygonGeometry(this._createArrowContours()));
             this._startOverlayListening();
-            // This string will connect the two options managers. Options specified in the parent manager will be propagated to the child.
+            // This string will connect the two options managers. Options specified in the parent
+            // manager will be propagated to the child.
             this._overlay.options.setParent(this.options);
             this._overlay.setMap(this.getMap());
         },
@@ -179,10 +185,12 @@ ymaps.modules.define("overlay.Arrow", [
         },
 
         _onDomEvent: function (e) {
-            // We listen to events from the child service overlay and throw them on an external class. This is to ensure that the "target" field was correctly defined in the event.
+            // We listen to events from the child service overlay and throw them on an external
+            // class. This is to ensure that the "target" field was correctly defined in the event.
             this.events.fire(e.get('type'), new Event({
                 target: this
-            // Linking the original event with the current one, so that all of the data fields of child events are accessible in a derived event.
+            // Linking the original event with the current one, so that all of the data fields of
+            // child events are accessible in a derived event.
             }, e));
         },
 
@@ -195,14 +203,16 @@ ymaps.modules.define("overlay.Arrow", [
                     this.options.get('arrowMaxLength', 20)
                 );
             contours.push(getContourFromLineCoordinates(mainLineCoordinates));
-            // We will draw the arrow only if the line length is not less than the length of the arrow.
+            // We will draw the arrow only if the line length is not less than the length of the
+            // arrow.
             if (arrowLength > 0) {
                 // Creating 2 more contours for arrows.
                 var lastTwoCoordinates = [
                         mainLineCoordinates[mainLineCoordinates.length - 2],
                         mainLineCoordinates[mainLineCoordinates.length - 1]
                     ],
-                // For convenience of calculation, we will rotate the arrow so that it is pointing along the y axis, and then turn the results back.
+                // For convenience of calculation, we will rotate the arrow so that it is pointing
+                // along the y axis, and then turn the results back.
                     rotationAngle = getRotationAngle(lastTwoCoordinates[0], lastTwoCoordinates[1]),
                     rotatedCoordinates = rotate(lastTwoCoordinates, rotationAngle),
 

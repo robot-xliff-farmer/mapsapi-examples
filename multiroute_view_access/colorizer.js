@@ -1,7 +1,8 @@
 ymaps.modules.define('MultiRouteColorizer', [
     'util.defineClass'
 ], function (provide, defineClass) {
-    // A class that color codes route segments in various colors depending on the type of segment and type of transport.
+    // A class that color codes route segments in various colors depending on the type of segment
+    // and type of transport.
     function Colorizer (multiRoute) {
         this.multiRoute = multiRoute;
 
@@ -39,7 +40,8 @@ ymaps.modules.define('MultiRouteColorizer', [
     defineClass(Colorizer, {
         // Handler for changing the active route.
         onActiveRouteChange: function () {
-            // Removing the color from the previous active route. Otherwise, it will stay colored in the inactive state.
+            // Removing the color from the previous active route. Otherwise, it will stay colored
+            // in the inactive state.
             this.uncolorize();
             // Storing the new active route and coloring it.
             this.activeRoute = this.multiRoute.getActiveRoute();
@@ -57,7 +59,9 @@ ymaps.modules.define('MultiRouteColorizer', [
         },
 
         colorize: function () {
-            // Searching through all the paths of the active route, if there is an active route. For each path, it goes through all the segments and sets the appearance parameters for each of them according to the type of segment.
+            // Searching through all the paths of the active route, if there is an active route.
+            // For each path, it goes through all the segments and sets the appearance parameters
+            // for each of them according to the type of segment.
             if (this.activeRoute) {
                 this.activeRoute.getPaths().each(function (path) {
                     path.getSegments().each(function (segment) {
@@ -65,7 +69,8 @@ ymaps.modules.define('MultiRouteColorizer', [
                         if (segmentType == "transport") {
                             this.colorizeTransportSegment(segment);
                         } else {
-                            // This includes segments with the types "walk" (walking) and "transfer" (transfer between stations).
+                            // This includes segments with the types "walk" (walking) and
+                            // "transfer" (transfer between stations).
                             segment.options.set({ preset: Colorizer.walkPreset });
                         }
                     }, this)
@@ -75,7 +80,8 @@ ymaps.modules.define('MultiRouteColorizer', [
 
         uncolorize: function () {
             if (this.activeRoute) {
-                // Searching through all the segments and deleting the appearance settings for each of them.
+                // Searching through all the segments and deleting the appearance settings for each
+                // of them.
                 this.activeRoute.getPaths().each(function (path) {
                     path.getSegments().each(function (segment) {
                         segment.options.unset("preset")
@@ -93,7 +99,11 @@ ymaps.modules.define('MultiRouteColorizer', [
 
         // Method that color codes transport segments.
         colorizeTransportSegment: function (segment) {
-            // Taking the first record about transport from the segment's array of transport and color coding the segment based on this record. For a single segment, the possible methods of transportation do not normally have radically different types. In other words, there aren't any segments that you can travel on both the subway and the bus. In our case, the difference between a bus and a taxi minibus is not important.
+            // Taking the first record about transport from the segment's array of transport and
+            // color coding the segment based on this record. For a single segment, the possible
+            // methods of transportation do not normally have radically different types. In other
+            // words, there aren't any segments that you can travel on both the subway and the bus.
+            // In our case, the difference between a bus and a taxi minibus is not important.
             var transport = segment.properties.get("transports")[0];
             if (transport.type == "suburban") {
                 segment.options.set({ preset: Colorizer.suburbanPreset });

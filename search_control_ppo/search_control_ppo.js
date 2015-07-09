@@ -5,7 +5,8 @@ function init() {
         controls: []
     });
     
-    // Creating an instance of the "search on map" control, with the data provider for searching by organizations set.
+    // Creating an instance of the "search on map" control, with the data provider for searching by
+    // organizations set.
     var searchControl = new ymaps.control.SearchControl({
         options: {
             provider: 'yandex#search'

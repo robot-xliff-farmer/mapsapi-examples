@@ -11,11 +11,13 @@ function init() {
         startEditing = false,
         button = $('#editor');
 
-    // Building a route from Smolenskaya metro station to Tretyakov station. The route should pass through Arbatskaya station.
+    // Building a route from Smolenskaya metro station to Tretyakov station. The route should pass
+    // through Arbatskaya station.
     ymaps.route([
         'Москва, метро Смоленская',
         {
-            // Metro Arbatskaya is a through point (passing through this point, but not stopping at it).
+            // Metro Arbatskaya is a through point (passing through this point, but not stopping at
+            // it).
             type: 'viaPoint',
             point: 'Москва, метро Арбатская'
         },

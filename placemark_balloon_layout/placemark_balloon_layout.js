@@ -9,7 +9,8 @@ function init () {
         }),
         counter = 0,
 
-        // Creating a balloon content layout. The layout is created using the layout factory and a text template.
+        // Creating a balloon content layout. The layout is created using the layout factory and a
+        // text template.
         BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
             '<div style="margin: 10px;">' +
                 '<b>{{properties.name}}</b><br />' +
@@ -17,7 +18,8 @@ function init () {
                 '<button id="counter-button"> +1 </button>' +
             '</div>', {
 
-            // Redefining the "build" function in order to start listening to the "click" event on a counter button when creating the layout.
+            // Redefining the "build" function in order to start listening to the "click" event on
+            // a counter button when creating the layout.
             build: function () {
                 // First, we call the "build" method of the parent class.
                 BalloonContentLayout.superclass.build.call(this);
@@ -26,9 +28,11 @@ function init () {
                 $('#count').html(counter);
             },
 
-            // In the same way, we redefine the "clear" function in order to remove listening for clicks when the layout is deleted from the map.
+            // In the same way, we redefine the "clear" function in order to remove listening for
+            // clicks when the layout is deleted from the map.
             clear: function () {
-                // We perform the steps in reverse order - first remove the listener, and then call the "clear" method of the parent class.
+                // We perform the steps in reverse order - first remove the listener, and then call
+                // the "clear" method of the parent class.
                 $('#counter-button').unbind('click', this.onCounterClick);
                 BalloonContentLayout.superclass.clear.call(this);
             },
@@ -47,7 +51,8 @@ function init () {
             name: 'Считаем'
         }, {
             balloonContentLayout: BalloonContentLayout,
-            // Disabling replacing the normal balloon with the balloon panel. If you do not specify this option, the balloon panel opens on small maps.
+            // Disabling replacing the normal balloon with the balloon panel. If you do not specify
+            // this option, the balloon panel opens on small maps.
             balloonPanelMaxMapArea: 0
         });
 

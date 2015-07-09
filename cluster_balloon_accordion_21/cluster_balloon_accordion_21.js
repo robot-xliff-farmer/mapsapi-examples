@@ -26,12 +26,15 @@ ymaps.ready(function () {
         clusterBalloonContentLayout: 'cluster#balloonAccordion',
         // Setting a custom layout.
         clusterBalloonItemContentLayout: customItemContentLayout,
-        // Setting the mode for opening the balloon. In this example, the balloon will never open in the panel mode.
+        // Setting the mode for opening the balloon. In this example, the balloon will never open
+        // in the panel mode.
         clusterBalloonPanelMaxMapArea: 0,
         // Setting the size of the balloon content layout (in pixels).
         clusterBalloonContentLayoutWidth: 250,
         clusterBalloonContentLayoutHeight: 200,
-        // You can disable displaying icons for geo objects in the list. In Internet Explorer earlier than version 9, icons are never displayed. clusterBalloonAccordionShowIcons: false
+        // You can disable displaying icons for geo objects in the list. In Internet Explorer
+        // earlier than version 9, icons are never displayed. clusterBalloonAccordionShowIcons:
+        // false
     });
     
     // Populating the cluster with geo objects with random positions.

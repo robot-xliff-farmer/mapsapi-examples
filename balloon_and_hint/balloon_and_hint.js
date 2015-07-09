@@ -8,7 +8,8 @@ function init () {
             searchControlProvider: 'yandex#search'
         }),
         myPlacemark = new ymaps.Placemark([55.907228, 31.260503], {
-            // In order for the balloon and hint to open on the placemark, you need to set certain properties.
+            // In order for the balloon and hint to open on the placemark, you need to set certain
+            // properties.
             balloonContentHeader: "Балун метки",
             balloonContentBody: "Содержимое <em>балуна</em> метки",
             balloonContentFooter: "Подвал",

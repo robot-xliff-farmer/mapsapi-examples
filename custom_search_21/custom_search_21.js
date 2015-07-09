@@ -8,12 +8,13 @@ function init () {
 
     /**
      * @class 
-     * Провайдер данных для элемента управления ymaps.control.SearchControl.
+     * Провайдер данных для элемента управления
+     * ymaps.control.SearchControl.
      * Осуществляет поиск геообъектов в по массиву points.
      * Реализует интерфейс IGeocodeProvider.
      * @name CustomSearchProvider
      * @param  {Object[]} points Array of points. @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IGeocodeProvider.xml
-     *      * 
+     *      *
      */
     function CustomSearchProvider (points) {
         this._points = points;
@@ -30,7 +31,8 @@ function init () {
             found = 0, 
             filteredGeoObjects;
 
-        // Looking for the query in the "text" property of each item in the array and writing the found results to a new one.
+        // Looking for the query in the "text" property of each item in the array and writing the
+        // found results to a new one.
         filteredGeoObjects = this._points.filter(function (point) {
             return point.text.toLowerCase().indexOf(request.toLowerCase()) != -1;
         });
@@ -137,7 +139,8 @@ function init () {
         options: {
             // Replacing the standard data provider (geocoder) with our own.
             provider: new CustomSearchProvider(myPoints),
-            // We won't show another placemark when selecting a search result, because the placemarks in the myCollection collection have already been added to the map.
+            // We won't show another placemark when selecting a search result, because the
+            // placemarks in the myCollection collection have already been added to the map.
             noPlacemark: true
         }
     });

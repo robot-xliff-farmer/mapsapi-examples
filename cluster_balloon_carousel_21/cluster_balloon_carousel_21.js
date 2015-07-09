@@ -21,14 +21,18 @@ ymaps.ready(function () {
         clusterBalloonContentLayout: 'cluster#balloonCarousel',
         // Setting a custom layout.
         clusterBalloonItemContentLayout: customItemContentLayout,
-        // Setting the mode for opening the balloon. In this example, the balloon will never open in the panel mode.
+        // Setting the mode for opening the balloon. In this example, the balloon will never open
+        // in the panel mode.
         clusterBalloonPanelMaxMapArea: 0,
         // Setting the size of the balloon content layout (in pixels).
         clusterBalloonContentLayoutWidth: 200,
         clusterBalloonContentLayoutHeight: 130,
         // Setting the maximum number of items in the bottom panel on one page
         clusterBalloonPagerSize: 5
-        // Configuring external view of the bottom panel. The marker mode is recommended for use with a small number of elements. clusterBalloonPagerType: 'marker', You can disable cycling the list when navigating using the side arrows. clusterBalloonCycling: false, You can disable displaying the navigation menu. clusterBalloonPagerVisible: false
+        // Configuring external view of the bottom panel. The marker mode is recommended for use
+        // with a small number of elements. clusterBalloonPagerType: 'marker', You can disable
+        // cycling the list when navigating using the side arrows. clusterBalloonCycling: false,
+        // You can disable displaying the navigation menu. clusterBalloonPagerVisible: false
     });
 
     // Populating the cluster with geo objects with random positions.

@@ -20,7 +20,8 @@ function init () {
             openEmptyBalloon: true
         });
 
-    // Handling the event of opening the balloon on the geo object: begin loading data, then updating its contents.
+    // Handling the event of opening the balloon on the geo object: begin loading data, then
+    // updating its contents.
     placemark.events.add('balloonopen', function (e) {
         placemark.properties.set('balloonContent', "Идет загрузка данных...");
 

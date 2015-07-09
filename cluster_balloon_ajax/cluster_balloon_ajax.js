@@ -39,7 +39,8 @@ ymaps.ready(function () {
             });
 
         if(ids.length) {
-            // Request to the server. The server will process the array of IDs and return a JSON object based on it containing the balloon text for the specified placemarks.
+            // Request to the server. The server will process the array of IDs and return a JSON
+            // object based on it containing the balloon text for the specified placemarks.
             jQuery.ajax({
                 contentType: 'application/json',
                 url: 'getBalloonContent.json',
@@ -49,7 +50,9 @@ ymaps.ready(function () {
                 processData: false
             }).then(function (data) {
                     jQuery.each(geoObjects, function (index, geoObject) {
-                        // The contents of the balloon is taken from data received from the server. The server returns an array of objects: [ {"balloonContentBody": "Содержимое балуна"}, ...]
+                        // The contents of the balloon is taken from data received from the server.
+                        // The server returns an array of objects: [ {"balloonContentBody":
+                        // "Содержимое балуна"}, ...]
                         geoObject.properties.set(data[index]);
                     });
                 }, function (jqXHR, textStatus, errorThrown) {

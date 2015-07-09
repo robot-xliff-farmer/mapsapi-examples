@@ -32,7 +32,8 @@ function init() {
             .append(submenu)
             // Adding a menu item.
             .appendTo(menu)
-            // On click, removing/adding the collection to the map and hiding/displaying the submenu.
+            // On click, removing/adding the collection to the map and hiding/displaying the
+            // submenu.
             .find('a')
             .toggle(function () {
                 myMap.geoObjects.remove(collection);

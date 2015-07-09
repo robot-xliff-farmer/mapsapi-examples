@@ -44,7 +44,8 @@ function init () {
             });
         }
 
-        // If you are using the clusterer, add the cluster to the map; if not using it, add the collection of geo objects to the map.
+        // If you are using the clusterer, add the cluster to the map; if not using it, add the
+        // collection of geo objects to the map.
         if (useClusterer) {
             // Adding an array of placemarks to the clusterer.
             clusterer.add(newPlacemarks);
@@ -77,7 +78,9 @@ function init () {
 
     // Show/hide additional input field.
     function toggleGridSizeField () {
-        // If the user has enabled clustering, an additional field for entering clusterization options appears - the clusterization cell size in pixels. By default, the cell size is 64. If clustering is disabled, the additional input field is hidden.
+        // If the user has enabled clustering, an additional field for entering clusterization
+        // options appears - the clusterization cell size in pixels. By default, the cell size is
+        // 64. If clustering is disabled, the additional input field is hidden.
         gridSizeField.toggle();
     }
 

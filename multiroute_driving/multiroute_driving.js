@@ -1,9 +1,10 @@
 function init () {
     /**
-     * Creating a multiroute.The first argument passes either the model or object description model.The second argument passes the multiroute display options.
+     * Creating a multiroute.The first argument passes either the model or object description
+     * model.The second argument passes the multiroute display options.
      * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRoute.xml
      * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRouteModel.xml
-     *       * 
+     *       *
      */
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         // The description of the reference points on the multi-stop route.
@@ -48,9 +49,10 @@ function init () {
         var referencePoints = multiRoute.model.getReferencePoints();
         referencePoints.splice(1, 0, "Москва, ул. Солянка, 7");
         /**
-         * Adding a throughpoint to the multiroute model.Note that throughpoints can only be placed between two waypoints. In other words, they can't be end points on a route.
+         * Adding a throughpoint to the multiroute model.Note that throughpoints can only be placed
+         * between two waypoints. In other words, they can't be end points on a route.
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRouteModel.xml#setReferencePoints
-         *           * 
+         *           *
          */
         multiRoute.model.setReferencePoints(referencePoints, [1]);
     });

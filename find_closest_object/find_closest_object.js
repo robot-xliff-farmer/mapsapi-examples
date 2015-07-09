@@ -10,7 +10,8 @@ function init() {
         cafe, metro;
     
     function findClosestObjects () {
-        // Searching the selection for the cafe nearest to the found metro station, and opening its balloon.
+        // Searching the selection for the cafe nearest to the found metro station, and opening its
+        // balloon.
         cafe.getClosestTo(metro.get(0)).balloon.open();
         
         // Opening the balloon of the cafe that is closest to the click.
@@ -19,7 +20,8 @@ function init() {
         });
     }
     
-    // Cafe descriptions can be stored in JSON format, in order to then generate geo objects from the descriptions using ymaps.geoQuery.
+    // Cafe descriptions can be stored in JSON format, in order to then generate geo objects from
+    // the descriptions using ymaps.geoQuery.
     cafe = ymaps.geoQuery({
         type: 'FeatureCollection',
         features: [{

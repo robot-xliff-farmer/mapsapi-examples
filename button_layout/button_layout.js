@@ -7,7 +7,8 @@ function init() {
             controls: []
         }),
 
-        // The button layout should display the data.content field and change depending on whether the button is pressed or not.
+        // The button layout should display the data.content field and change depending on whether
+        // the button is pressed or not.
         ButtonLayout = ymaps.templateLayoutFactory.createClass(
             "<div class='my-button {% if state.selected %}my-button-selected{% endif %}'>" +
                 "{{data.content}}" +

@@ -27,11 +27,13 @@ ymaps.ready(function () {
     // Opening the balloon on the third placemark in the array.
     var objectState = clusterer.getObjectState(geoObjects[2]);
     if (objectState.isClustered) {
-        // If the placemark is in a cluster, it will be set as the active object. This means it will be "selected" in the cluster's open balloon.
+        // If the placemark is in a cluster, it will be set as the active object. This means it
+        // will be "selected" in the cluster's open balloon.
         objectState.cluster.state.set('activeObject', geoObjects[2]);
         clusterer.balloon.open(objectState.cluster);
     } else if (objectState.isShown) {
-        // If the placemark was not included in a cluster and is visible on the map, its balloon will open.
+        // If the placemark was not included in a cluster and is visible on the map, its balloon
+        // will open.
         geoObjects[2].balloon.open();
     }
 });

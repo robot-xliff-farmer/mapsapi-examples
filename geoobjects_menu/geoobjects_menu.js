@@ -8,7 +8,8 @@ function init() {
             searchControlProvider: 'yandex#search'
         });
     
-    // A function, which according to the state of the checkboxes in the menu shows or hides the geo objects from the selection.
+    // A function, which according to the state of the checkboxes in the menu shows or hides the
+    // geo objects from the selection.
     function checkState () {
         var shownObjects,
             byColor = new ymaps.GeoQueryResult(),
@@ -24,7 +25,8 @@ function init() {
         if ($('#green').prop('checked')) {
             byColor = myObjects.search('options.fillColor = "#00ff00"')
                 .add(myObjects.search('options.preset = "islands#greenIcon"'))
-                // After we have found all the green objects, we will add them to the objects found in the previous iteration.
+                // After we have found all the green objects, we will add them to the objects found
+                // in the previous iteration.
                 .add(byColor);
         }
         if ($('#yellow').prop('checked')) {
@@ -43,7 +45,8 @@ function init() {
             byShape = myObjects.search('geometry.type = "Circle"').add(byShape);
         }
         
-        // We selected objects by color and shape. Now we'll show objects on the map that combine the desired characteristics.
+        // We selected objects by color and shape. Now we'll show objects on the map that combine
+        // the desired characteristics.
         shownObjects = byColor.intersect(byShape).addToMap(myMap);
         // Objects that were not included in the selection must be removed from the map.
         myObjects.remove(shownObjects).removeFromMap(myMap);

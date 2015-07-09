@@ -4,7 +4,8 @@ var myMap;
 ymaps.ready(init);
 
 function init () {
-    // Creating an instance of the map and binding it to the container with the specified ID ("map").
+    // Creating an instance of the map and binding it to the container with the specified ID
+    // ("map").
     myMap = new ymaps.Map('map', {
         // When initializing the map, you must specify its center and the zoom factor.
         center: [55.76, 37.64], // Москва

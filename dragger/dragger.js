@@ -26,7 +26,8 @@ function init () {
     function onDraggerStart(event) {   
         var offset = markerElement.offset(),
             position = event.get('position');
-        // Saving the offset of the marker relative to the drag starting point.         markerOffset = [
+        // Saving the offset of the marker relative to the drag starting point.        
+        // markerOffset = [
             position[0] - offset.left,
             position[1] - offset.top
         ];
@@ -60,14 +61,16 @@ function init () {
             ];
         // Checking that the dragger finished working in a visible area of the map.
         if (containsPoint(mapGlobalPixelBounds, markerGlobalPosition)) {
-            // Now we'll convert the global pixel coordinates to geocoordinates with the current zoom level of the map.
+            // Now we'll convert the global pixel coordinates to geocoordinates with the current
+            // zoom level of the map.
             var geoPosition = map.options.get('projection').fromGlobalPixels(markerGlobalPosition, map.getZoom());
             alert(geoPosition.join(' '));
         }
     }
 
     function applyDelta (event) {
-        // The 'delta' field contains the difference between the positions of the current and previous dragger events.
+        // The 'delta' field contains the difference between the positions of the current and
+        // previous dragger events.
         var delta = event.get('delta');
         markerPosition[0] += delta[0];
         markerPosition[1] += delta[1];

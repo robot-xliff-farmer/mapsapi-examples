@@ -8,7 +8,8 @@ function init () {
             searchControlProvider: 'yandex#search'
         }),
         objectManager = new ymaps.ObjectManager({
-            // We want to load data for a balloon before opening, so we disable automatically opening the balloon on click.
+            // We want to load data for a balloon before opening, so we disable automatically
+            // opening the balloon on click.
             geoObjectOpenBalloonOnClick: false
         });
 

@@ -57,7 +57,8 @@ function init() {
 
     // Creating a polygon using the Polygon auxiliary class.
     var myPolygon = new ymaps.Polygon([
-        // Specifying the coordinates of the vertices of the polygon. The coordinates of the vertices of the external contour.
+        // Specifying the coordinates of the vertices of the polygon. The coordinates of the
+        // vertices of the external contour.
         [
             [55.75, 37.50],
             [55.80, 37.60],

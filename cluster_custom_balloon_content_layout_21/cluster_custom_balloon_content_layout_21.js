@@ -28,9 +28,11 @@ jQuery(function () {
         var clusterer = new ymaps.Clusterer({
             clusterDisableClickZoom: true,
             clusterOpenBalloonOnClick: true,
-            // Setting the mode for opening the balloon. In this example, the balloon will never open in the panel mode.
+            // Setting the mode for opening the balloon. In this example, the balloon will never
+            // open in the panel mode.
             clusterBalloonPanelMaxMapArea: 0,
-            // By default, the balloon options balloonMaxWidth and balloonMaxHeight are not set for the clusterer, since all standard layouts have defined dimensions.
+            // By default, the balloon options balloonMaxWidth and balloonMaxHeight are not set for
+            // the clusterer, since all standard layouts have defined dimensions.
             clusterBalloonMaxHeight: 200,
             // Setting a custom layout for balloon content.
             clusterBalloonContentLayout: customBalloonContentLayout

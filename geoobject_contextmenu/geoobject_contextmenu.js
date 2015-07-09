@@ -17,7 +17,8 @@ function init () {
         preset: "islands#redStretchyIcon"
     });
 
-    // The context menu allows you to change the placemark settings. It is opened by right-clicking the placemark.
+    // The context menu allows you to change the placemark settings. It is opened by right-clicking
+    // the placemark.
     myPlacemark.events.add('contextmenu', function (e) {
         // If the placemark menu is already displayed, remove it.
         if ($('#menu').css('display') == 'block') {
@@ -43,12 +44,14 @@ function init () {
                 top: e.get('pagePixels')[1]
             });
 
-            // Filling the fields of the context menu with the current values of the placemark properties.
+            // Filling the fields of the context menu with the current values of the placemark
+            // properties.
             $('#menu input[name="icon_text"]').val(myPlacemark.properties.get('iconContent'));
             $('#menu input[name="hint_text"]').val(myPlacemark.properties.get('hintContent'));
             $('#menu input[name="balloon_text"]').val(myPlacemark.properties.get('balloonContent'));
 
-            // When the "Save" button is clicked, we change placemark properties to the values entered in the context menu form.
+            // When the "Save" button is clicked, we change placemark properties to the values
+            // entered in the context menu form.
             $('#menu input[type="submit"]').click(function () {
                 myPlacemark.properties.set({
                     iconContent: $('input[name="icon_text"]').val(),

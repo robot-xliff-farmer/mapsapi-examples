@@ -57,7 +57,13 @@ function init () {
      * @param  {String} [parameters.options.float = 'right'] Position of the control. Can take the values "none", "left" and "right".
      * @param  {Number|Number[]} [parameters.options.maxWidth = 90] Maximum width of the control. @param  {Object} [parameters.options.position] Position of the control. When the "position" option is set to the value "float",it is automatically interpreted as "none".
      * @param  {String} [parameters.options.size = 'auto'] Parameter responsible for the appearance of the control's layout. Can take the values:
-     * <ul> <li>'auto' - the default button layout automatically changes its appearance depending on the size of the map and the number of added controls.</li> <li>'small' - the icon will be displayed in the button layout, regardless of the size of the map.</li> <li>'medium' - only the text is displayed in the button layout, regardless of the size of the map.</li> <li>'large' - the icon and the text are always displayed in the button layout, regardless of map size.</li></ul>@param  {Number} [parameters.options.position.top] Position relative to the top edge.
+     * <ul> <li>'auto' - the default button layout automatically changes its appearance depending on
+     * the size of the map and the number of added controls.</li> <li>'small' - the icon will be
+     * displayed in the button layout, regardless of the size of the map.</li> <li>'medium' - only
+     * the text is displayed in the button layout, regardless of the size of the map.</li>
+     * <li>'large' - the icon and the text are always displayed in the button layout, regardless of
+     * map size.</li></ul>@param  {Number} [parameters.options.position.top] Position relative to
+     * the top edge.
      * @param  {Number} [parameters.options.position.bottom] Position relative to the bottom edge.
      * @param  {Number} [parameters.options.position.left] Position relative to the left edge.
      * @param  {Number} [parameters.options.position.right] Position relative to the right edge.
@@ -65,16 +71,6 @@ function init () {
      * @param  {Object} [parameters.data] Data for the control.
      * @param  {String} [parameters.data.content = "my text"] Content that will be displayed.
      * @param  {String} [parameters.data.title = "my title"] Tooltip when you hover over the control.
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      */
     function CustomControl (parameters) {
         parameters = parameters || {};
@@ -143,14 +139,17 @@ function init () {
 
                 if (parent) {
                     var callback = this._callback = function (childElement) {
-                        // Since the operation is performed asynchronously, before setting the layout of the parent element, you must verify that the callback has not changed (that it is the same request).
+                        // Since the operation is performed asynchronously, before setting the
+                        // layout of the parent element, you must verify that the callback has not
+                        // changed (that it is the same request).
                         if (this._callback == callback) {
                             this._layout.setParentElement(childElement);
                         }
                     };
 
                     /**
-                     * Getting from the parent the container that the control must be added to, and setting the parent element for the layout.
+                     * Getting from the parent the container that the control must be added to, and
+                     * setting the parent element for the layout.
                      * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/control.Manager.xml#getChildElement
                      *                       */
                     parent.getChildElement(this).then(callback, this);

@@ -7,12 +7,14 @@ ymaps.ready(function () {
             searchControlProvider: 'yandex#search'
         }),
         /**
-         * Creating a clusterer by calling a constructor function. A list of all options is available in the documentation.
+         * Creating a clusterer by calling a constructor function. A list of all options is
+         * available in the documentation.
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#constructor-summary
          *           */
             clusterer = new ymaps.Clusterer({
             /**
-             * Only cluster styles can be specified via the clusterer; for placemark styles, each placemark must be set separately.
+             * Only cluster styles can be specified via the clusterer; for placemark styles, each
+             * placemark must be set separately.
              * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/option.presetStorage.xml
              *               */
             preset: 'islands#invertedVioletClusterIcons',
@@ -29,12 +31,13 @@ ymaps.ready(function () {
             geoObjectHideIconOnBalloonOpen: false
         }),
         /**
-         * The function returns an object containing the placemark data. The clusterCaption data field will appear in the list of geo objects in the cluster balloon. The balloonContentBody field is the data source for the balloon content. Both fields support HTML markup. For a list of data fields that are used by the standard content layouts for geo objects' placemark icons and balloons, see the documentation.
+         * The function returns an object containing the placemark data. The clusterCaption data
+         * field will appear in the list of geo objects in the cluster balloon. The
+         * balloonContentBody field is the data source for the balloon content. Both fields support
+         * HTML markup. For a list of data fields that are used by the standard content layouts for
+         * geo objects' placemark icons and balloons, see the documentation.
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
-         *           * 
-         * 
-         * 
-         * 
+         *           *
          */
             getPointData = function (index) {
             return {
@@ -43,7 +46,8 @@ ymaps.ready(function () {
             };
         },
         /**
-         * The function returns an object containing the placemark options. All options that are supported by the geo objects can be found in the documentation.
+         * The function returns an object containing the placemark options. All options that are
+         * supported by the geo objects can be found in the documentation.
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
          *           */
             getPointOptions = function () {
@@ -73,7 +77,8 @@ ymaps.ready(function () {
     });
 
     /**
-     * You can add a JavaScript array of placemarks (not a geo collection) or a single placemark to the clusterer.
+     * You can add a JavaScript array of placemarks (not a geo collection) or a single placemark to
+     * the clusterer.
      * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#add
       */
     clusterer.add(geoObjects);

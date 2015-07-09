@@ -49,7 +49,8 @@ function init () {
     }, {
         // Options. The fill color and transparency.
         fillColor: '#7df9ff33',
-        // Additional fill transparency. The resulting transparency will not be #33(0.2), but 0.1(0.2*0.5).
+        // Additional fill transparency. The resulting transparency will not be #33(0.2), but
+        // 0.1(0.2*0.5).
         fillOpacity: 0.5,
         // Stroke color.
         strokeColor: '#0000FF',

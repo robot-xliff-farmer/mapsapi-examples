@@ -27,7 +27,8 @@ function init () {
         $("<a class=\"title\" href=\"#\">" + group.properties.get('name') + "</a>")
             .bind("click", function () {
                 var link = $(this);
-                // If the menu item is "inactive," we add the group to the map. Otherwise, we delete it from the map.
+                // If the menu item is "inactive," we add the group to the map. Otherwise, we
+                // delete it from the map.
                 if (link.hasClass("active")) {
                     map.geoObjects.remove(group);
                 } else {

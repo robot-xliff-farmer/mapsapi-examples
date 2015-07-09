@@ -55,11 +55,14 @@ ymaps.ready(function () {
             // Describing the shape of a "Polygon" hotspot.
             iconShape: {   
                 type: 'Polygon',
-                // A polygon is defined as a three-dimensional array. The top-level array contains the contours of the polygon. The first element of the array is the external contour, and the others are internal contours.
+                // A polygon is defined as a three-dimensional array. The top-level array contains
+                // the contours of the polygon. The first element of the array is the external
+                // contour, and the others are internal contours.
                 coordinates: [
                     // Describing the external polygon contour as an array of coordinates.
                     [[-28,-76],[28,-76],[28,-20],[12,-20],[0,-4],[-12,-20],[-28,-20]]
-                    // ... Describing the internal contours - empty areas inside the external contour.
+                    // ... Describing the internal contours - empty areas inside the external
+                    // contour.
                 ]
             }
         }

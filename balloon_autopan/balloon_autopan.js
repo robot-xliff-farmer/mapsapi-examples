@@ -18,7 +18,8 @@ ymaps.ready(function () {
                 '</div>' +
                 '</div>', {
                 /**
-                 * Builds an instance of a layout based on a template and adds it to the parent HTML element.
+                 * Builds an instance of a layout based on a template and adds it to the parent HTML
+                 * element.
                  * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
                  * @function
                  * @name build
@@ -48,7 +49,8 @@ ymaps.ready(function () {
                 },
 
                 /**
-                 * The method will be invoked by the API's template system when resizing the nested layout.
+                 * The method will be invoked by the API's template system when resizing the nested
+                 * layout.
                  * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
                  * @function
                  * @name onSublayoutSizeChange
@@ -79,7 +81,8 @@ ymaps.ready(function () {
                 },
 
                 /**
-                 * Closes the balloon when the "x" is clicked, throwing the "userclose" event on the layout.
+                 * Closes the balloon when the "x" is clicked, throwing the "userclose" event on the
+                 * layout.
                  * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
                  * @function
                  * @name onCloseClick
@@ -113,7 +116,8 @@ ymaps.ready(function () {
                 },
 
                 /**
-                 * Checking the availability of the item (in IE and Opera it might not be there yet).
+                 * Checking the availability of the item (in IE and Opera it might not be there
+                 * yet).
                  * @function
                  * @private
                  * @name _isElement
@@ -140,7 +144,8 @@ ymaps.ready(function () {
             balloonLayout: MyBalloonLayout,
             balloonContentLayout: MyBalloonContentLayout,
             balloonPanelMaxMapArea: 0
-            // Not hiding the icon when the balloon is open. hideIconOnBalloonOpen: false, And additionally moving the balloon to open over the icon. balloonOffset: [3, -40]
+            // Not hiding the icon when the balloon is open. hideIconOnBalloonOpen: false, And
+            // additionally moving the balloon to open over the icon. balloonOffset: [3, -40]
         });
 
     myMap.geoObjects.add(myPlacemark);

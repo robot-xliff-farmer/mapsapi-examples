@@ -14,7 +14,9 @@ function init() {
          * Request options
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
           */
-        // boundedBy: myMap.getBounds(), // Sorting the results from the center of the map window strictBounds: true, // Together with the boundedBy option, the search will be strictly inside the area specified in boundedBy
+        // boundedBy: myMap.getBounds(), // Sorting the results from the center of the map window
+        // strictBounds: true, // Together with the boundedBy option, the search will be strictly
+        // inside the area specified in boundedBy
         results: 1 // Если нужен только один результат, экономим трафик пользователей
     }).then(function (res) {
             // Selecting the first result of geocoding.
@@ -60,7 +62,9 @@ function init() {
             console.log('Полное описание объекта: %s', firstGeoObject.properties.get('text'));
 
             /**
-             * To add a placemark with its own styles and balloon content at the coordinates found by the geocoder, create a new placemark at the coordinates of the found placemark and add it to the map in place of the found one.
+             * To add a placemark with its own styles and balloon content at the coordinates found
+             * by the geocoder, create a new placemark at the coordinates of the found placemark and
+             * add it to the map in place of the found one.
              */
             /**
              var myPlacemark = new ymaps.Placemark(coords, { iconContent: 'моя метка', balloonContent: 'Содержимое балуна <strong>моей метки</strong>' }, { preset: 'islands#violetStretchyIcon' }); myMap.geoObjects.add(myPlacemark);

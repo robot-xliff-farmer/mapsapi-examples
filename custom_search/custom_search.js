@@ -50,7 +50,8 @@ function init() {
         options: {
             // Replacing the standard data provider (geocoder) with our own.
             provider: new CustomSearchProvider(myPoints),
-            // We won't show another placemark when selecting a search result, because the placemarks in the myCollection collection have already been added to the map.
+            // We won't show another placemark when selecting a search result, because the
+            // placemarks in the myCollection collection have already been added to the map.
             noPlacemark: true,
             resultsPerPage: 5
         }});
@@ -61,7 +62,8 @@ function init() {
 }
 
 
-// The data provider for ymaps.control.SearchControl. Performs a search for geo objects in the "points" array. Implements the IGeocodeProvider interface.
+// The data provider for ymaps.control.SearchControl. Performs a search for geo objects in the
+// "points" array. Implements the IGeocodeProvider interface.
 function CustomSearchProvider(points) {
     this.points = points;
 }

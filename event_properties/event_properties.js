@@ -10,7 +10,8 @@ function init () {
         searchControlProvider: 'yandex#search'
     });
 
-    // Processing events that occur when the user left-clicks anywhere on the map. When such an event occurs, we open the balloon.
+    // Processing events that occur when the user left-clicks anywhere on the map. When such an
+    // event occurs, we open the balloon.
     myMap.events.add('click', function (e) {
         if (!myMap.balloon.isOpen()) {
             var coords = e.get('coords');
@@ -29,7 +30,8 @@ function init () {
         }
     });
 
-    // Processing events that occur when the user right-clicks anywhere on the map. When such an event occurs, we display a popup hint at the point of click.
+    // Processing events that occur when the user right-clicks anywhere on the map. When such an
+    // event occurs, we display a popup hint at the point of click.
     myMap.events.add('contextmenu', function (e) {
         myMap.hint.open(e.get('coords'), 'Кто-то щелкнул правой кнопкой');
     });

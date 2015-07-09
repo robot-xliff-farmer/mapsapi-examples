@@ -14,7 +14,8 @@ ymaps.ready(function () {
             iconImageHref: 'images/myIcon.gif',
             // The size of the placemark.
             iconImageSize: [30, 42],
-            // The offset of the upper left corner of the icon relative to its "tail" (the anchor point).
+            // The offset of the upper left corner of the icon relative to its "tail" (the anchor
+            // point).
             iconImageOffset: [-3, -42]
         });
 
