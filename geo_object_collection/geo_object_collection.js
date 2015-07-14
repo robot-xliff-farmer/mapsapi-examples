@@ -25,10 +25,11 @@ function init() {
 
     myMap.geoObjects.add(yellowCollection).add(blueCollection);
 
-    // You can subscribe to events of child elements via a collection.
-    yellowCollection.events.add('click', function () { alert('Кликнули по желтой метке') });
+    // You can subscribe to events of child elements via a collection.   
+    // yellowCollection.events.add('click', function () { alert('Кликнули по желтой
+    // метке') });
     blueCollection.events.add('click', function () { alert('Кликнули по синей метке') });
 
-    // You can set options for child elements via a collection.
-    blueCollection.options.set('preset', 'islands#blueDotIcon');
+    // You can set options for child elements via a collection.   
+    // blueCollection.options.set('preset', 'islands#blueDotIcon');
 }

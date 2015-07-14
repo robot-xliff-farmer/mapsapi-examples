@@ -2,11 +2,9 @@ ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map('map', {
-            center: [55.753994, 37.622093],
-            zoom: 9
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+        center: [55.753994, 37.622093],
+        zoom: 9
+    });
 
     // Find coordinates of the center of Nizhny Novgorod.
     ymaps.geocode('Нижний Новгород', {
@@ -14,10 +12,11 @@ function init() {
          * Request options
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
           */
-        // boundedBy: myMap.getBounds(), // Sorting the results from the center of the map window
-        // strictBounds: true, // Together with the boundedBy option, the search will be strictly
-        // inside the area specified in boundedBy
-        results: 1 // Если нужен только один результат, экономим трафик пользователей
+        // Sorting the results from the center of the map window. boundedBy: myMap.getBounds(),
+        // strictBounds: true, Together with the boundedBy option, the search will be strictly
+        // inside the area specified in boundedBy. If you need only one result, we're saving the
+        // users bandwidth.
+        results: 1
     }).then(function (res) {
             // Selecting the first result of geocoding.
             var firstGeoObject = res.geoObjects.get(0),
@@ -30,7 +29,8 @@ function init() {
             myMap.geoObjects.add(firstGeoObject);
             // Scaling the map to the geo object viewport.
             myMap.setBounds(bounds, {
-                checkZoomRange: true // проверяем наличие тайлов на данном масштабе.
+                // Checking the availability of tiles at the given zoom level.
+                checkZoomRange: true
             });
 
             /**
@@ -67,9 +67,8 @@ function init() {
              * add it to the map in place of the found one.
              */
             /**
-             var myPlacemark = new ymaps.Placemark(coords, { iconContent: 'моя метка', balloonContent: 'Содержимое балуна <strong>моей метки</strong>' }, { preset: 'islands#violetStretchyIcon' }); myMap.geoObjects.add(myPlacemark);
-             
-             
+             var myPlacemark = new ymaps.Placemark(coords, { iconContent: 'My Placemark', balloonContent: 'Content of the <strong>My Placemark</strong> balloon' } { preset: 'islands#violetStretchyIcon' }); myMap.geoObjects.add(myPlacemark);
+             { iconContent: 'моя метка', balloonContent: 'Содержимое балуна <strong>моей метки</strong>' }             
              
              
              
