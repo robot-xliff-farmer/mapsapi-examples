@@ -11,15 +11,17 @@ function init() {
     
     function findClosestObjects () {
         // Searching the selection for the cafe nearest to the found metro station, and opening its
-        // balloon.        cafe.getClosestTo(metro.get(0)).balloon.open();
+        // balloon.
+        cafe.getClosestTo(metro.get(0)).balloon.open();
         
-        // Opening the balloon of the cafe that is closest to the click.       
-        // myMap.events.add('click', function (event) {
+        // Opening the balloon of the cafe that is closest to the click
+        myMap.events.add('click', function (event) {
             cafe.getClosestTo(event.get('coords')).balloon.open();
         });
     }
     
-    ///Cafe descriptions can be stored in JSON format, in order to then generate geo objects from the descriptions using ymaps.geoQuery.    cafe = ymaps.geoQuery({
+    ///Cafe descriptions can be stored in JSON format, in order to then generate geo objects from the descriptions using ymaps.geoQuery.
+    cafe = ymaps.geoQuery({
         type: 'FeatureCollection',
         features: [{
                 type: 'Feature',
@@ -50,10 +52,11 @@ function init() {
                 }
             }
         ]
-    // Adding points to the map immediately.    }).addToMap(myMap);
+    // Adding points to the map immediately.
+    }).addToMap(myMap);
 
-    // Using reverse geocoding to find the metro station "Kropotkinskaya".    metro =
-    // ymaps.geoQuery(ymaps.geocode([55.744828, 37.603423], {kind: 'metro'}))
-    // Waiting for the response from the server and then processing the received results.       
-    // .then(findClosestObjects);
+    // Using reverse geocoding to find the metro station "Kropotkinskaya".
+    metro = ymaps.geoQuery(ymaps.geocode([55.744828, 37.603423], {kind: 'metro'}))
+    // Waiting for the response from the server and then processing the received results.
+        .then(findClosestObjects);
 }
