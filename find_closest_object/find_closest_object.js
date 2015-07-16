@@ -14,13 +14,14 @@ function init() {
         // balloon.
         cafe.getClosestTo(metro.get(0)).balloon.open();
         
-        // Opening the balloon of the cafe that is closest to the click
+        // Opening the balloon of the cafe that is closest to the click.
         myMap.events.add('click', function (event) {
             cafe.getClosestTo(event.get('coords')).balloon.open();
         });
     }
     
-    ///Cafe descriptions can be stored in JSON format, in order to then generate geo objects from the descriptions using ymaps.geoQuery.
+    // Cafe descriptions can be stored in JSON format, in order to then generate geo objects from
+    // the descriptions using ymaps.geoQuery.
     cafe = ymaps.geoQuery({
         type: 'FeatureCollection',
         features: [{

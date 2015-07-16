@@ -12,10 +12,10 @@ function init() {
          * Request options
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
           */
-        // Sorting the results from the center of the map window. boundedBy: myMap.getBounds(),
+        // Sorting the results from the center of the map window boundedBy: myMap.getBounds(),
         // strictBounds: true, Together with the boundedBy option, the search will be strictly
-        // inside the area specified in boundedBy. If you need only one result, we're saving the
-        // users bandwidth.
+        // inside the area specified in boundedBy. If you need only one result, this will minimize
+        // the user's traffic.
         results: 1
     }).then(function (res) {
             // Selecting the first result of geocoding.
