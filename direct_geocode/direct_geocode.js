@@ -67,8 +67,9 @@ function init() {
              * add it to the map in place of the found one.
              */
             /**
-             var myPlacemark = new ymaps.Placemark(coords, { iconContent: 'My Placemark', balloonContent: 'Content of the <strong>My Placemark</strong> balloon' } { preset: 'islands#violetStretchyIcon' }); myMap.geoObjects.add(myPlacemark);
-             { iconContent: 'моя метка', balloonContent: 'Содержимое балуна <strong>моей метки</strong>' }             
+             var myPlacemark = new ymaps.Placemark(coords, { iconContent: 'моя метка', balloonContent: 'Содержимое балуна <strong>моей метки</strong>' }, { preset: 'islands#violetStretchyIcon' }); myMap.geoObjects.add(myPlacemark);
+             
+             
              
              
              

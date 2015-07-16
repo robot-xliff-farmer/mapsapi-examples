@@ -51,9 +51,9 @@ ymaps.ready(function () {
             }).then(function (data) {
                     jQuery.each(geoObjects, function (index, geoObject) {
                         // The contents of the balloon is taken from data received from the server.
-                        // The server returns an array of objects: [ {"balloonContentBody":
-                        // "Balloon content"} , ...]
-{"balloonContentBody": "Содержимое балуна"}                        geoObject.properties.set(data[index]);
+                        // The server returns an array of objects: [{"balloonContentBody":
+                        // "Содержимое балуна"} , ...]
+                        geoObject.properties.set(data[index]);
                     });
                 }, function (jqXHR, textStatus, errorThrown) {
                     jQuery.each(geoObjects, function (index, geoObject) {
